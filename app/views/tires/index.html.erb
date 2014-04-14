@@ -28,9 +28,6 @@
       <th>Width MM (Inches)</th>
       <th>Height MM (Inches)</th>
       <th>Sidewall MM (Inches)</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -41,9 +38,6 @@
         <td><pre><%= (sprintf("%3.2f",tire.width_mm))%>mm (<%= (sprintf("%2.2f",tire.width_mm/25.4)) %>")</pre></td>
         <td><pre><%= (sprintf("%3.2f",tire.height_mm))%>mm (<%= (sprintf("%2.2f",tire.height_mm/25.4)) %>")   </pre></td>
         <td><pre><%= (sprintf("%3.2f",tire.sidewall_mm))%>mm (<%= (sprintf("%2.2f",tire.sidewall_mm/25.4))%>")</pre></td>
-        <td><%= link_to 'Show', tire %></td>
-        <td><%= link_to 'Edit', edit_tire_path(tire) %></td>
-        <td><%= link_to 'Destroy', tire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
