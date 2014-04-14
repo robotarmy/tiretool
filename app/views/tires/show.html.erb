@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @tire.width_mm %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @tire.profile %>
+  </p>
+
+<p>
+  <strong>Height</strong>
+  <%= @tire.sidewall_mm %>
+</p>
+
+<p>
+  <strong>Sidewall Height</strong>
+  <%= @tire.sidewall_mm %>
+</p>
+
+<p>
+  <strong>Rim size:</strong>
+  <%= @tire.rim_inches %>
+</p>
+
+<p>
+  <strong>Speed rating:</strong>
+  <%= @tire.speed_rating %>
+</p>
+
+<%= link_to 'Edit', edit_tire_path(@tire) %> |
+<%= link_to 'Back', tires_path %>
