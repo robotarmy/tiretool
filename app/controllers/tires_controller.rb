@@ -33,6 +33,9 @@ class TiresController < ApplicationController
   # PATCH/PUT /tires/1
   # PATCH/PUT /tires/1.json
   def update
+    redirect_to :index
+    return
+
     respond_to do |format|
       if @tire.update(tire_params)
         format.html { redirect_to @tire, notice: 'Tire was successfully updated.' }
