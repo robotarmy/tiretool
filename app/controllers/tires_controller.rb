@@ -56,7 +56,12 @@ class TiresController < ApplicationController
   #    format.json { head :no_content }
    # end
   end
-
+  def dump
+    require 'stringio'
+    tires = StringIO.new
+    tires << Tire.all.map(&:spec).join(" ")
+    render :text => tires
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tire
@@ -71,7 +76,7 @@ class TiresController < ApplicationController
     end
 
     def search_params
-      params.permit(:profile, :gt_height_mm,:lt_height_mm, :lt_height_mm, :rim_inches, :gt_width_mm, :lt_width_mm)
+      params.permit(:profile, :gt_height_mm,:lt_height_mm, :gt_sidewall_mm, :lt_sidewall_mm ,:rim_inches, :gt_width_mm, :lt_width_mm)
     end
 
 end

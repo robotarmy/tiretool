@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20140406052029) do
     t.integer  "width_mm"
     t.integer  "profile"
     t.integer  "rim_inches"
-    t.string   "speed_rating"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "sidewall_mm"

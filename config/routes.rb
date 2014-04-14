@@ -1,6 +1,7 @@
 Tool::Application.routes.draw do
-  resources :tires
-
+  resources :tires do 
+  end
+  get "/export_tires" => "tires#dump"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

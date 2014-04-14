@@ -1,4 +1,5 @@
 class Tire < ActiveRecord::Base
+  validates_uniqueness_of [:width_mm, :profile, :rim_inches]
   validates_numericality_of :width_mm
   validates_numericality_of :rim_inches
   validates_numericality_of :profile

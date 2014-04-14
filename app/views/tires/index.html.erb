@@ -2,13 +2,19 @@
 
 <%= form_tag({action: :index},{method: :get}) do  %>
  <div>
-  show width greater than  <%= text_field_tag :gt_width_mm%> mm
+   show <strong>width</strong> greater than  <%= text_field_tag :gt_width_mm, params[:gt_width_mm]%> mm
  </div>
  <div>
-show width less than  <%= text_field_tag :lt_width_mm%> mm
+   show <strong>width</strong> less than  <%= text_field_tag :lt_width_mm, params[:lt_width_mm]%> mm
  </div>
  <div>
-show rim size equal  <%= text_field_tag :rim_inches%> inches
+   show <strong>height</strong> greater than  <%= text_field_tag :gt_height_mm, params[:gt_height_mm]%> mm
+ </div>
+ <div>
+   show <strong>height</strong> less than  <%= text_field_tag :lt_height_mm,params[:lt_height_mm] %> mm
+ </div>
+ <div>
+   show <strong>rim</strong> size equal  <%= text_field_tag :rim_inches, params[:rim_inches]%> inches
  </div>
  <div>
 <%=submit_tag :go %>
