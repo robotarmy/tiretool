@@ -71,7 +71,7 @@ class TiresController < ApplicationController
     end
 
     def search_params
-      params.permit(:gt_height_mm,:lt_height_mm, :lt_height_mm, :rim_inches, :gt_width_mm, :lt_width_mm)
+      params.permit(:profile, :gt_height_mm,:lt_height_mm, :lt_height_mm, :rim_inches, :gt_width_mm, :lt_width_mm)
     end
 
 end

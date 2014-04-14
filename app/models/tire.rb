@@ -14,11 +14,11 @@ class Tire < ActiveRecord::Base
       conditions = []
       search_params.each do |key , value|
         if key =~ /^gt_(.+)$/
-          gt_params[$1] = value
+          gt_params[$1] = value unless value.empty?
         elsif key =~ /^lt_(.+)$/
-          lt_params[$1] = value
+          lt_params[$1] = value unless value.empty? 
         else
-          match_params[key] = value
+          match_params[key] = value unless value.empty? 
         end
       end
       gt_params.each do |key, value|

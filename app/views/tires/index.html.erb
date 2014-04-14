@@ -1,7 +1,18 @@
 <h1>Listing tires</h1>
 
-<%= form_tag({action: :index},{method: :get}) do |f| %>
-show sidewall greater than  <%= text_field_tag :gt_sidewall_inches%> inches
+<%= form_tag({action: :index},{method: :get}) do  %>
+ <div>
+  show width greater than  <%= text_field_tag :gt_width_mm%> mm
+ </div>
+ <div>
+show width less than  <%= text_field_tag :lt_width_mm%> mm
+ </div>
+ <div>
+show rim size equal  <%= text_field_tag :rim_inches%> inches
+ </div>
+ <div>
+<%=submit_tag :go %>
+ </div>
 <%end%>
 
 <table>
