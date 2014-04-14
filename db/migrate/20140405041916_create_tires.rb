@@ -4,7 +4,7 @@ class CreateTires < ActiveRecord::Migration
       t.integer :width
       t.integer :profile
       t.integer :rim_size
-
+      t.string  :spec
       t.timestamps
     end
   end

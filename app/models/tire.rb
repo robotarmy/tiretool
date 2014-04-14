@@ -1,5 +1,5 @@
 class Tire < ActiveRecord::Base
-  validates_uniqueness_of [:width_mm, :profile, :rim_inches]
+  validates_uniqueness_of   :spec
   validates_numericality_of :width_mm
   validates_numericality_of :rim_inches
   validates_numericality_of :profile
@@ -49,9 +49,6 @@ class Tire < ActiveRecord::Base
     self.height_mm = height * 25.4
   end
 
-  def spec
-    "#{width_mm}/#{profile}-#{rim_inches}"
-  end
   def height
     sidewall_height * 2 + rim_inches 
   end
@@ -71,10 +68,11 @@ class Tire < ActiveRecord::Base
     return @created_tires, @parse_errors
   end
   def self.create_tire!(tire_input)
+    spec  = tire_input
     first = tire_input.split("/")
     width = first.first
     rim   = first.last.split("-").last
     profile   = first.last.split("-").first
-    tire =  Tire.create!(:width_mm => width, :rim_inches => rim, :profile => profile)
+    tire =  Tire.create!(:spec => tire_input, :width_mm => width, :rim_inches => rim, :profile => profile)
   end
 end
